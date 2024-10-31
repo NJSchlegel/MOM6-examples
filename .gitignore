@@ -3,6 +3,7 @@ build/*
 !build/env_c5
 # Ignore .datasets
 .datasets
+c4
 # Ignore model output
 *.out
 CPU_stats
