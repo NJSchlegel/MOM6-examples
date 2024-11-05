@@ -1,0 +1,101 @@
+! This input file provides the adjustable run-time parameters for the ice-sheet/shelf component of
+! the version 6 of the Modular Ocean Model (MOM6).
+! Where appropriate, parameters use usually given in MKS units.
+
+! === module MOM ===
+IC_OUTPUT_FILE = "IceShelf_IC"  ! default = "MOM_IC"
+                                ! The file into which to write the initial conditions.
+!ICE_SHELF = True                !   [Boolean] default = False
+!                                ! If true, enables the ice shelf model.
+
+
+! === module MOM_ice_shelf ===
+SHELF_THREE_EQN = TRUE         !   [Boolean] default = True
+                                ! If true, use the three equation expression of consistency to calculate the
+                                ! fluxes at the ice-ocean interface.
+SHELF_2EQ_GAMMA_T = 1.0E-04     !   [m s-1]
+                                ! If SHELF_THREE_EQN is false, this the fixed turbulent exchange velocity at the
+                                ! ice-ocean interface.
+
+! === module MOM_ice_shelf_dynamic ===
+!DENSITY_ICE = 917              ! ice density (kg/m^3)
+
+ICE_A_GLEN_CONFIG = "FILE"  !This specifies how the ice-stiffness parameter is specified.
+                            !Valid values are: "CONSTANT" and "FILE".
+ICE_STIFFNESS_FILE = "IS_input.nc" ! File with ice-stiffness parameters
+A_GLEN_VARNAME = "A_glen" ! The name of the variable with ice-stiffness parameter.
+!A_GLEN_VARNAME = "nu" ! The name of the variable with ice-stiffness parameter (or viscosity parameter if "OBS").
+!A_GLEN = 2.261e-25     ! ice stiffness parameter Pa ^ (-1/3) s
+
+ICE_VISCOSITY_COMPUTE = "MODEL"   ! This specifies whether the ice-viscosity is constant, computed internally by the model or
+                                ! computed from observations and read from a file
+                                ! Valid values are: "CONSTANT", "MODEL" and "OBS"
+                                ! If "OBS" then A_GLEN_VARNAME = "nu", where "nu" is the name of the field of the computed
+                                ! viscosity from observations
+
+GLEN_EXPONENT = 3               ! ice flow-law exponent
+MIN_STRAIN_RATE_GLEN = 1e-22    ! regularization parameter for flow law (s)^(-1)
+
+ICE_BASAL_FRICTION_CONFIG = "FILE"  !This specifies how the initial ice profile is specified. "
+                                        !Valid values are: "CONSTANT" and "FILE".
+BASAL_FRICTION_FILE = "IS_input.nc" ! File with basal friction coefficients
+BASAL_FRICTION_VARNAME = "tau_b_beta" ! The name of the variable with basal friction coefficients
+BASAL_FRICTION_COEFF = 1.0e10   ! basal friction coeffiecient Pa (m/s)^(-1)
+!BASAL_FRICTION_COEFF = 61.71    ! basal friction coeffiecient Pa (m/a)^(-1)
+BASAL_FRICTION_EXP = 1          ! sliding law exponent
+
+
+AVG_OCEAN_DENSITY = 1027        ! average ocean density (kg/m^3)
+THRESH_FLOAT_COL_DEPTH = 1e-3   ! minimum water column depth for ice flotation (m)
+!INPUT_FLUX_ICE_SHELF = 1e6      ! ice flux input into domain (m^2/a) 1.5e6
+!INPUT_VEL_ICE_SHELF = 4.7532e-6 ! ice inflow velocity into domain (m/s)  !OVS 11/09/20
+!INPUT_THICK_ICE_SHELF = 1000    ! ice thickness at the upstream end (m)
+
+ICE_VELOCITY_TIMESTEP = 86400   ! time step for ice dynamics in seconds
+
+CONJUGATE_GRADIENT_TOLERANCE = 1e-7 ! tolerance for conjugate gradient
+ICE_NONLINEAR_TOLERANCE = 1e-7  ! tolerance on ice velocity
+CONJUGATE_GRADIENT_MAXIT = 2000 ! number of maximum iterations
+NONLIN_SOLVE_ERR_MODE = 3       ! 2
+WRITE_OUTPUT_TO_FILE = TRUE     ! for debugging without netcdf capability
+ICE_SHELF_CFL_FACTOR =.25       ! CFL for the ice-shelf advection
+
+SHELF_MOVING_FRONT = FALSE      ! This specifies whether the calving front can move
+
+DYNAMIC_SHELF_MASS = TRUE       ! This specifies whether the ice sheet is dynamic or static
+
+GROUNDING_LINE_INTERPOLATE = True ! This specifies whether subgrid grounding line interpolation is used
+GROUNDING_LINE_INTERP_SUBGRID_N = 5 ! This specifies the number of subgrid fractions
+
+! === module MOM_ice_shelf_initialize ===
+ICE_VELOCITY_FILE = "IS_input.nc"!  The file for the ice-shelf velocities.
+ICE_U_VEL_VARNAME = "VX"   ![m/s] default = "u_shelf"
+                               ! The  variable for the u ice-shelf  velocity component.
+ICE_V_VEL_VARNAME = "VY"   ![m/s] default = "v_shelf"
+                                ! The  variable for the v ice-shelf  velocity component
+
+BED_TOPO_FILE = "IS_input.nc"!  The file for the ice-shelf bed topography.
+BED_TOPO_VARNAME = "bed_elev"   ! The variable for the bed topography
+
+ICE_SHELF_BC_FILE = "IS_input.nc"!  The input file for the ice-shelf b.c.s.
+ICE_THICKNESS_MASK_VARNAME = "h_mask"    ! [none] default "h_mask"
+                                         ! The variable for ice-thickness mask
+
+ICE_UBDRYMSK_VARNAME = "ufacemask"       ![none] default "ufacemask"
+                                         ! The variable for u_face_bondary_mask
+
+ICE_VBDRYMSK_VARNAME = "vfacemask"       ![none] default "vfacemask"
+                                         ! The variable for v_face_bondary_mask
+
+ICE_UBDRYVAL_VARNAME = "ubdry_val"       ![m/s] default "ubdry_val"
+                                         ! The variable for u_bdry_val
+
+ICE_VBDRYVAL_VARNAME = "vbdry_val"       ![m/s] default "vbdry_val"
+
+DATA_OVERRIDE_SHELF_FLUXES = True                                         !Read SMB from a file
+
+MIN_BASAL_TRACTION = 100.0
+
+MAX_SURFACE_SLOPE = 0.1
+
+MIN_H_SHELF = 10.0

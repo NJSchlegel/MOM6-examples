@@ -1,0 +1,7 @@
+#override DT_ICE_DYNAMICS = 1200.
+#override DT_RADIATION = 1200.
+#override MAXTRUNC = 2000000
+#override MINIMUM_DEPTH = 9.9
+#override MASKING_DEPTH = 0.0
+ENABLE_ICE_SHEET_ADOT_COUPLING = True
+!#override MERGED_CONTINUITY = True

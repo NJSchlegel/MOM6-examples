@@ -1,0 +1,27 @@
+"ATM" , "p_surf"        , "psl"         , "./INPUT/psl.nc"          , "bilinear" ,  1.0
+"ATM" , "p_bot"         , "psl"         , "./INPUT/psl.nc"          , "bilinear" ,  1.0
+"ATM" , "t_bot"         , "tas"    , "./INPUT/tas.nc"     , "bilinear" ,  1.0
+"ATM" , "sphum_bot"     , "huss"    , "./INPUT/huss.nc"     , "bilinear" ,  1.0
+"ATM" , "u_bot"         , "uas"    , "./INPUT/uas.nc"     , "bicubic" ,  1.0
+"ATM" , "v_bot"         , "vas"    , "./INPUT/vas.nc"     , "bicubic" ,  1.0
+"ATM" , "z_bot"         , ""            , ""                             , "none" , 10.0
+"ATM" , "gust"          , ""            , ""                             , "none" ,  1.0e-4
+"ATM" , "flux_lw"       , "rlds"    , "./INPUT/rlds.nc"     , "bilinear" ,  1.0
+"ATM" , "co2_bot"       , ""        , ""                    , "none"     , 350.0e-6
+"ATM" , "co2"       , ""        , ""                    , "none"     , 350.0e-6
+"ATM" , "flux_sw_down_total_dir",   "rsds", "./INPUT/rsds.nc", "bilinear" , 0.5
+"ATM" , "flux_sw_down_total_dif",   "rsds", "./INPUT/rsds.nc", "bilinear" , 0.5
+"ATM" , "flux_sw_down_vis_dir", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.5
+"ATM" , "flux_sw_down_vis_dif", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.5
+"ICE" , "sw_flux_vis_dir_dn", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.285
+"ICE" , "sw_flux_vis_dif_dn", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.285
+"ICE" , "sw_flux_nir_dir_dn", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.215
+"ICE" , "sw_flux_nir_dif_dn", "rsds", "./INPUT/rsds.nc", "bilinear" , 0.215
+"ATM" , "lprec"         , "prra"        , "./INPUT/prra.nc"  , "bilinear" ,  1.0
+"ATM" , "fprec"         , "prsn"        , "./INPUT/prsn.nc"  , "bilinear" ,  1.0
+"ICE" , "dhdt"          , ""            , ""                             , "none"  ,  80.0
+"ICE" , "dedt"          , ""            , ""                             , "none"  ,  2.0e-6
+"ICE" , "drdt"          , ""            , ""                             , "none"  , 10.0
+"ICE", "sic_obs"        , "SIC"         ,"./INPUT/sst_ice_clim.nc"       , "bilinear" ,  0.01
+"ICE", "sit_obs"        , "SIT"         ,"./INPUT/sst_ice_clim.nc"       , "bilinear" , 1.0
+"ICE", "sst_obs"        , "SST"         ,"./INPUT/sst_ice_clim.nc"       , "bilinear" ,  1.0
