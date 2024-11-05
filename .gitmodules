@@ -1,11 +1,11 @@
 [submodule "src/MOM6"]
 	path = src/MOM6
 	url = https://github.com/NJSchlegel/MOM6_fork.git
-	branch = iOM4_with_bergs_Icepack_merged_adot 
+	branch = land_to_mom6_adot_devel
 [submodule "src/SIS2"]
 	path = src/SIS2
 	url = https://github.com/NJSchlegel/SIS2_fork.git
-	branch = iOM4_with_bergs_Icepack_merged_adot
+	branch = land_to_mom6_adot_devel
 [submodule "tools/matlab/gtools"]
 	path = tools/matlab/gtools
 	url = https://github.com/Adcroft/gtools.git
@@ -19,7 +19,7 @@
 [submodule "src/coupler"]
 	path = src/coupler
 	url = https://github.com/NJSchlegel/FMScoupler_fork.git
-	branch = iOM4_with_bergs_Icepack_merged_adot
+	branch = land_to_mom6_adot_devel
 [submodule "src/atmos_null"]
 	path = src/atmos_null
 	url = https://github.com/NOAA-GFDL/atmos_null.git
@@ -53,4 +53,5 @@
 [submodule "src/land_lad2"]
 	path = src/land_lad2
 	url = https://gitlab.gfdl.noaa.gov/Nicole.Schlegel/land-lad-2-is.git
-	branch = iOM4_with_bergs_Icepack_merged_adot 
+	branch = land_to_mom6_adot_devel
+
