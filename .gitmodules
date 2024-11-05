@@ -54,4 +54,3 @@
 	path = src/land_lad2
 	url = https://gitlab.gfdl.noaa.gov/Nicole.Schlegel/land-lad-2-is.git
 	branch = land_to_mom6_adot_devel
-
