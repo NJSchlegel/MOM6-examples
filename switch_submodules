@@ -1,13 +1,15 @@
 cd ./src/MOM6
-git switch dev/gfdl
+git switch land_to_mom6_adot_devel
 cd ../SIS2
-git switch aeh_merge_iOM4_with_bergs_icepack1.3.3
+git switch land_to_mom6_adot_devel
 cd ../icebergs
 git switch dev/gfdl
 cd ../coupler
-git switch iOM4_with_bergs_rebase
+git switch land_to_mom6_adot_devel
 cd ../mkmf
 git switch c5
 cd ../FMS2
 git switch iOM4_with_bergs_SMB
+cd ../land_lad2
+git switch land_to_mom6_adot_devel
 cd ../..
