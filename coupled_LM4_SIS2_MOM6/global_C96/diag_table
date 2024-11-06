@@ -1,7 +1,7 @@
 t2.1
 1750 1 1 0 0 0
-"ice_shelf_%4yr",        4,"days",1,"days","time",1,"years"
-"ice_shelf_scalar_%4yr", 4,"days",1 "days", "time",1,"years"
+"ice_shelf_%4yr",        1,"days",1,"days","time",1,"years"
+"ice_shelf_scalar_%4yr", 1,"days",1 "days", "time",1,"years"
 "seaice%4yr",            1,"months",1,"days","time",1,"years"
 
 
