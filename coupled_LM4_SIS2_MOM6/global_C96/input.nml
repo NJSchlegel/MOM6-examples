@@ -35,12 +35,6 @@
 /
 
 
-
- &flux_exchange_nml
-      ice_sheet_enabled = .true.
-/
-
-
  &coupler_nml
         months = 0,
         days   = 2,
@@ -58,6 +52,7 @@
         use_lag_fluxes=.false.
         check_stocks=0
         do_chksum=.false.
+		  ice_sheet_enabled = .true.
 /
 
 
@@ -192,7 +187,6 @@
         prohibit_negative_canopy_water=.false.
         min_frac = 1e-8
         npes_io_group = 1
-		  IS_enabled = .true.
 /
 
  &landuse_nml
